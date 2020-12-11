@@ -1,4 +1,13 @@
 ###################
+Introduction
+###################
+
+Hello,we from the group that make this projects would like to introduce ourselves,
+Rafli(Chairman),Bagus,Dennis and Ivan.And we are from the University of Informatics
+Facilities Development,Thank you.
+Happy Coding :)
+
+###################
 What is CodeIgniter
 ###################
 
