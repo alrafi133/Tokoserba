@@ -66,6 +66,7 @@ class Admin extends CI_Controller{
       'pesanan' => $this->m_pesanan_masuk->pesanan(),
       'pesanan_diproses' => $this->m_pesanan_masuk->pesanan_diproses(),
       'pesanan_dikirim' => $this->m_pesanan_masuk->pesanan_dikirim(),
+      'pesanan_selesai' => $this->m_pesanan_masuk->pesanan_selesai(),
       'isi' => 'pesanan_masuk'
     );
     $this->load->view('layout/wrapper_backend', $data, FALSE);

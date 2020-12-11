@@ -7,6 +7,7 @@ class Pesanan_saya extends CI_Controller{
   {
     parent::__construct();
     $this->load->model(array('m_transaksi'));
+    $this->load->model(array('m_pesanan_masuk'));
   }
 
   function index()
@@ -16,6 +17,7 @@ class Pesanan_saya extends CI_Controller{
       'belum_bayar' => $this->m_transaksi->belum_bayar(),
       'diproses' =>  $this->m_transaksi->diproses(),
       'dikirim' =>  $this->m_transaksi->dikirim(),
+      'selesai' =>  $this->m_transaksi->selesai(),
       'isi' => 'pesanan_saya'
     );
     $this->load->view('layout/wrapper_frontend', $data, FALSE);
@@ -68,6 +70,17 @@ class Pesanan_saya extends CI_Controller{
       'isi' => 'pembayaran'
     );
     $this->load->view('layout/wrapper_frontend', $data, FALSE);
+  }
+
+  public function diterima($id_transaksi)
+  {
+    $data = array(
+      'id_transaksi' => $id_transaksi,
+      'status_order' => '3'
+    );
+    $this->m_pesanan_masuk->update_order($data);
+    $this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Diterima');
+    redirect('pesanan_saya');
   }
 
 }

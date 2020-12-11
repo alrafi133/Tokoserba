@@ -52,7 +52,7 @@
                   <td>
                     <b>Rp. <?= number_format($value->total_bayar, 0, ',','.') ?></b><br>
                     <?php if ($value->status_bayar == 0): ?>
-                        <span class="badge badge-warning">Belum Bayar</span>
+                      <span class="badge badge-warning">Belum Bayar</span>
                     <?php else: ?>
                       <span class="badge badge-success">Sudah Bayar</span><br>
                       <span class="badge badge-primary">Menuggu Verifikasi</span>
@@ -60,8 +60,8 @@
                   </td>
                   <td>
                     <?php if ($value->status_bayar == 0): ?>
-                        <a href="<?= base_url('pesanan_saya/bayar/'.$value->id_transaksi) ?>" class="btn btn-sm btn-flat btn-primary">Bayar</a>
-                      <?php endif; ?>
+                      <a href="<?= base_url('pesanan_saya/bayar/'.$value->id_transaksi) ?>" class="btn btn-sm btn-flat btn-primary">Bayar</a>
+                    <?php endif; ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -88,8 +88,8 @@
                   <td>
                     <b>Rp. <?= number_format($value->total_bayar, 0, ',','.') ?></b><br>
 
-                      <span class="badge badge-success">Terverifikasi</span><br>
-                      <span class="badge badge-primary">Sedang Diproses</span>
+                    <span class="badge badge-success">Terverifikasi</span><br>
+                    <span class="badge badge-primary">Sedang Diproses</span>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -115,17 +115,42 @@
                   </td>
                   <td>
                     <b>Rp. <?= number_format($value->total_bayar, 0, ',','.') ?></b><br>
-                      <span class="badge badge-success">Dikirim</span><br>
+                    <span class="badge badge-success">Dikirim</span><br>
                   </td>
                   <td><h4><?= $value->no_resi ?></h4><br>
-                    <a href="#" class="btn btn-success btn-xs">Diterima</a>
+                    <button data-toggle="modal" data-target="#diterima<?= $value->id_transaksi ?>" class="btn btn-primary btn-xs btn-flat">Diterima</button>
                   </td>
                 </tr>
               <?php endforeach; ?>
             </table>
           </div>
           <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+            <table class="table">
+              <tr>
+                <th>Nomor Order</th>
+                <th>Tanggal</th>
+                <th>Ekspedisi</th>
+                <th>Total Bayar</th>
+                <th>Nomor Resi</th>
+              </tr>
+              <?php foreach ($selesai as $key => $value): ?>
+                <tr>
+                  <td><?= $value->no_order ?></td>
+                  <td><?= $value->tgl_order ?></td>
+                  <td>
+                    <b><?= $value->expedisi ?></b> <br>
+                    Paket : <?= $value->paket ?><br>
+                    Ongkir : Rp. <?= number_format($value->ongkir, 0, ',','.') ?>
+                  </td>
+                  <td>
+                    <b>Rp. <?= number_format($value->total_bayar, 0, ',','.') ?></b><br>
+                    <span class="badge badge-success">Selesai</span><br>
+                  </td>
+                  <td><h4><?= $value->no_resi ?></h4><br>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </table>
           </div>
         </div>
       </div>
@@ -134,3 +159,28 @@
   </div>
 </div>
 </div>
+
+<?php foreach ($dikirim as $key => $value): ?>
+  <div class="modal fade" id="diterima<?= $value->id_transaksi ?>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Pesanan Diterima</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Apakah Anda Yakin Pesanan Sudah di Terima ??&hellip;</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Belum Diterima</button>
+          <a href="<?= base_url('pesanan_saya/diterima/'.$value->id_transaksi) ?>" class="btn btn-primary">Sudah Diterima</a>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+<?php endforeach; ?>

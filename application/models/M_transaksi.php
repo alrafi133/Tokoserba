@@ -70,4 +70,14 @@ class M_transaksi extends CI_Model{
     return $this->db->get()->result();
   }
 
+  public function selesai()
+  {
+    $this->db->select('*');
+    $this->db->from('tbl_transaksi');
+    $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+    $this->db->where('status_order=3');
+    $this->db->order_by('id_transaksi', 'desc');
+    return $this->db->get()->result();
+  }
+
 }

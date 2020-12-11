@@ -132,7 +132,35 @@
             </table>
           </div>
           <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+            <table class="table">
+              <tr>
+                <th>Nomor Order</th>
+                <th>Tanggal</th>
+                <th>Ekspedisi</th>
+                <th>Total Bayar</th>
+                <th>Nomor Resi</th>
+              </tr>
+              <?php foreach ($pesanan_selesai as $key => $value): ?>
+                <tr>
+                  <td><?= $value->no_order ?></td>
+                  <td><?= $value->tgl_order ?></td>
+                  <td>
+                    <b><?= $value->expedisi ?></b> <br>
+                    Paket : <?= $value->paket ?><br>
+                    Ongkir : Rp. <?= number_format($value->ongkir, 0, ',','.') ?>
+                  </td>
+                  <td>
+                    <b>Rp. <?= number_format($value->total_bayar, 0, ',','.') ?></b><br>
+
+                    <span class="badge badge-success">Diterima</span><br>
+
+                  </td>
+                  <td>
+                    <b><h4><?= $value->no_resi ?></h4></b>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </table>
           </div>
         </div>
       </div>
