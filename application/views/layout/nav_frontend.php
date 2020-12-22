@@ -3,7 +3,7 @@
   <div class="container">
     <a href="<?= base_url() ?>" class="navbar-brand">
     <i class="fas fa-store text-primary"></i>
-      <span class="brand-text font-weight-light"><b>Toko Online</b></span>
+      <span class="brand-text font-weight-light"><b>Radebaiv</b></span>
     </a>
 
     <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,17 +26,6 @@
             <?php endforeach; ?>
           </ul>
         </li>
-
-        <li class="nav-item">
-          <a href="#" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
-          <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-            <li><a href="#" class="dropdown-item">Some action </a></li>
-            <li><a href="#" class="dropdown-item">Some other action</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
 
@@ -46,8 +35,7 @@
       <li class="nav-item mb-2">
         <?php if ($this->session->userdata('email') == ""): ?>
           <a class="nav-link" href="<?= base_url('pelanggan/login') ?>">
-            <span class="brand-text font-weight-light">Login</span>
-            <img src="<?= base_url() ?>templates/dist/img/user1-128x128.jpg" class="img-circle img-fluid" style="opacity: .8" width="40">
+            <span class="brand-text font-weight-light"><b> Sign Up</b></span>
           </a>
         <?php else: ?>
           <a class="nav-link" data-toggle="dropdown" href="#">
@@ -56,9 +44,6 @@
           </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <div class="dropdown-divider"></div>
-            <a href="<?= base_url('pelanggan/akun') ?>" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> Akun Saya
-            </a>
             <div class="dropdown-divider"></div>
             <a href="<?= base_url('pesanan_saya') ?>" class="dropdown-item">
               <i class="fas fa-shopping-cart mr-2"></i> Pesanan Saya
@@ -122,7 +107,7 @@
           </a>
           <div class="dropdown-divider"></div>
           <a href="<?= base_url('belanja') ?>" class="dropdown-item dropdown-footer">View Cart</a>
-          <a href="#" class="dropdown-item dropdown-footer">Checkout</a>
+          <a href="<?= base_url('belanja/checkout') ?>" class="dropdown-item dropdown-footer">Checkout</a>
         <?php endif; ?>
         </div>
       </li>

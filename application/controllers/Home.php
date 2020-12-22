@@ -41,4 +41,17 @@ class Home extends CI_Controller{
     $this->load->view('layout/wrapper_frontend', $data, FALSE);
   }
 
+  public function akun()
+  {
+    //Proteksi Halaman
+    $this->pelanggan_login->proteksi_halaman();
+
+    $data = array(
+      'title' => 'Home',
+      'barang' => $this->m_home->get_all_data(),
+      'isi' => 'home'
+    );
+    $this->load->view('layout/wrapper_frontend', $data, FALSE);
+  }
+
 }

@@ -14,4 +14,9 @@ class M_pelanggan extends CI_Model{
     $this->db->insert('tbl_pelanggan', $data);
   }
 
+  public function cekData($where = null)
+  {
+    return $this->db->get_where('tbl_pelanggan', $where);
+  }
+
 }

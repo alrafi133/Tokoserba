@@ -11,6 +11,7 @@ class Belanja extends CI_Controller{
 
   function index()
   {
+    $this->pelanggan_login->proteksi_halaman();
     if (empty($this->cart->contents())) {
       redirect('home');
     }
@@ -24,6 +25,7 @@ class Belanja extends CI_Controller{
 
   public function add()
   {
+    $this->pelanggan_login->proteksi_halaman();
     $redirect_page = $this->input->post('redirect_page');
     $data = array(
       'id' => $this->input->post('id'),

@@ -2,14 +2,14 @@
   <!-- small box -->
   <div class="small-box bg-info">
     <div class="inner">
-      <h3>150</h3>
+      <h3><?= $total_pesanan ?></h3>
 
       <p>Pesanan Masuk</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    <a href="<?= base_url('admin/pesanan_masuk') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
   </div>
 </div>
 <!-- ./col -->
@@ -34,14 +34,14 @@
   <!-- small box -->
   <div class="small-box bg-warning">
     <div class="inner">
-      <h3>150</h3>
+      <h3><?= $total_user ?></h3>
 
       <p>Customer</p>
     </div>
     <div class="icon">
       <i class="fas fa-users"></i>
     </div>
-    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    <a href="<?= base_url('user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
   </div>
 </div>
 <!-- ./col -->
