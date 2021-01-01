@@ -19,6 +19,7 @@ class Pelanggan_login {
       $id_pelanggan = $cek->id_pelanggan;
       $nama_pelanggan = $cek->nama_pelanggan;
       $email = $cek->email;
+      $password = $cek->password;
       $foto = $cek->foto;
       //Session Baru
       $this->ci->session->set_userdata('id_pelanggan', $id_pelanggan);
@@ -28,8 +29,8 @@ class Pelanggan_login {
       redirect('home');
     }else {
       //Jika Salah
-      $this->ci->session->set_flashdata('error', 'Email Atau Password Salah');
-      redirect('pelanggan/login');
+      // $this->ci->session->set_flashdata('error', 'Email Atau Password Salah');
+      // redirect('pelanggan/login');
     }
   }
 
