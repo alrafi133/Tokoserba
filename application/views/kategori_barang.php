@@ -54,11 +54,8 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="text-right">
-                    <a href="#" class="btn btn-sm bg-info">
-                      <i class="fas fa-eye"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                      <i class="fas fa-shopping-cart"></i> Add Cart
+                    <a href="<?= base_url('home/detail_barang/'.$value->id_barang) ?>" class="btn btn-sm bg-info">
+                      <span>Detail Barang <i class="fas fa-eye"></i></span>
                     </a>
                   </div>
                 </div>

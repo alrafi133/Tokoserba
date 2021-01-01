@@ -34,8 +34,8 @@
       <!-- Messages Dropdown Menu -->
       <li class="nav-item mb-2">
         <?php if ($this->session->userdata('email') == ""): ?>
-          <a class="nav-link" href="<?= base_url('pelanggan/login') ?>">
-            <span class="brand-text font-weight-light"><b> Sign Up</b></span>
+          <a href="<?= base_url('pelanggan/login') ?>" class="btn btn-outline-secondary nav-link mt-2">
+            <span class="brand-text"><i class="fas fa-sign-in-alt"> Sign In</i></span>
           </a>
         <?php else: ?>
           <a class="nav-link" data-toggle="dropdown" href="#">
@@ -123,7 +123,7 @@
       <div class="container">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"> <?= $title ?></h1>
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

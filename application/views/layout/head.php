@@ -21,6 +21,9 @@
   <!-- SweetAlert2 -->
  <link rel="stylesheet" href="<?= base_url() ?>templates/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
+ <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/uploads/logo_ecom.ico') ?>">
+
+
   <!-- jQuery -->
   <script src="<?= base_url() ?>templates/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->

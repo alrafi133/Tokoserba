@@ -4,7 +4,7 @@
       <h3 class="card-title">Foto Barang</h3>
 
       <div class="card-tools">
-        <a href="<?= base_url('barang/add') ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Barang</a>
+        <a href="<?= base_url('barang/add') ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Foto Barang</a>
       </div>
       <!-- /.card-tools -->
     </div>

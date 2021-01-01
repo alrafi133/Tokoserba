@@ -52,15 +52,15 @@
             </div>
             <div class="card-footer">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                   <div class="text-left">
                     <h5><span class="badge bg-secondary">Rp. <?= number_format($value->harga, 0, ',','.') ?></span></h5>
                   </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                   <div class="text-right">
                     <a href="<?= base_url('home/detail_barang/'.$value->id_barang) ?>" class="btn btn-sm bg-info">
-                      <i class="fas fa-eye"></i>
+                    <span>Detail <i class="fas fa-eye"></i></span>
                     </a>
                     <button type="submit" class="btn btn-primary btn-sm swalDefaultSuccess">
                       <i class="fas fa-shopping-cart"></i> Add Cart
