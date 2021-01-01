@@ -10,7 +10,7 @@
         <div class="col-12 product-image-thumbs">
           <div class="product-image-thumb"><img src="<?= base_url('assets/uploads/'.$barang->gambar) ?>" alt="Product Image"></div>
           <?php foreach ($gambar as $key => $value): ?>
-            <div class="product-image-thumb active"><img src="<?= base_url('assets/uploads/'.$value->gambar) ?>" alt="Product Image"></div>
+            <div class="product-image-thumb active"><img src="<?= base_url('assets/gambar/'.$value->gambar) ?>" alt="Product Image"></div>
           <?php endforeach; ?>
         </div>
       </div>
