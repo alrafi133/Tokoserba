@@ -76,7 +76,7 @@ class Gambarbarang extends CI_Controller{
     $data = array('id_gambar' => $id_gambar);
     $this->m_gambarbarang->delete($data);
     $this->session->set_flashdata('pesan', 'Foto Berhasil di Hapus');
-    redirect('gambarbarang/addd/'.$id_barang);
+    redirect('gambarbarang/add/'.$id_barang);
   }
 
 }
