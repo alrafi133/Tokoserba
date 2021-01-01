@@ -58,9 +58,10 @@ class Pelanggan extends CI_Controller{
 
     if ($this->form_validation->run() == TRUE) {
       $email = htmlspecialchars($this->input->post('email'));
-      $password = password_verify($this->input->post('password'));
+      $password = $this->input->post('password');
       $this->pelanggan_login->login($email, $password);
       // $auth = $this->m_pelanggan->cek_login();
+      $this->_login();
     }
 
     $data = array(
@@ -68,6 +69,34 @@ class Pelanggan extends CI_Controller{
       'isi' => 'login_pelanggan'
     );
     $this->load->view('layout/wrapper_frontend', $data, FALSE);
+  }
+
+  private function _login()
+  {
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+
+    $user = $this->db->get_where('tbl_pelanggan',['email'=>$email])->row_array();
+
+    if ($user) {
+      if (password_verify($password, $user['password'])) {
+        $data = [
+          'email' => $user['email'],
+          'role_id' => $user['role_id'],
+          'nama_pelanggan' => $user['nama_pelanggan'],
+          'foto' => $user['foto']
+        ];
+        $this->session->set_userdata($data);
+        redirect('home');
+      }else {
+        $this->session->set_flashdata('error', 'Password Anda Salah');
+        redirect('pelanggan/login');
+      }
+
+    }else {
+      $this->session->set_flashdata('error', 'Email Tidak Terdaftar');
+      redirect('pelanggan/login');
+    }
   }
 
   public function logout()
