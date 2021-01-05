@@ -80,9 +80,6 @@
         </div>
       <?php echo form_close() ?>
 
-      <p class="mb-0">
-        <a href="<?= base_url('pelanggan/register') ?>" class="text-center">Register a new membership</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>
